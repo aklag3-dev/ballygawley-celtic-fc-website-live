@@ -112,7 +112,7 @@
 
         <a href="#" class="flex items-center gap-3" aria-label="Ballygawley Celtic FC - Home">
           <img src="assets/images/logos/bcfc-logo.png" alt="Ballygawley Celtic FC" class="w-[60px] h-[60px] rounded-full object-cover">
-          <span class="font-heading font-bold text-lg hidden sm:block" style="color: var(--text-primary);">Ballygawley Celtic</span>
+          <span class="font-heading font-bold text-lg" style="color: var(--text-primary);">Ballygawley Celtic</span>
         </a>
 
         <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
@@ -127,7 +127,9 @@
           <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
             <i class="fas fa-moon"></i>
           </button>
-          <a href="#join" class="hidden md:inline-flex cta-btn cta-btn-primary text-sm py-2 px-4">Join Us</a>
+          <a href="#join" class="hidden md:inline-flex cta-btn cta-btn-primary text-sm py-2 px-4">
+            <span class="mr-1">🇮🇪</span> Join Us
+          </a>
           <button id="mobileNavToggle" class="md:hidden dark-mode-toggle" aria-label="Open menu" aria-expanded="false">
             <i class="fas fa-bars"></i>
           </button>
@@ -137,12 +139,17 @@
 
     <div id="mobileNav" class="mobile-nav fixed top-0 right-0 h-full w-72 z-50 shadow-2xl md:hidden mobile-nav-panel">
       <div class="p-6 pt-20 flex flex-col gap-4">
+        <button id="mobileNavClose" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full" aria-label="Close menu" style="background-color: var(--bg-secondary);">
+          <i class="fas fa-times text-xl" style="color: var(--text-primary);"></i>
+        </button>
         <a href="#about" class="text-lg font-medium py-2 border-b mobile-nav-link">About</a>
         <a href="#registration" class="text-lg font-medium py-2 border-b mobile-nav-link">Registration</a>
         <a href="#location" class="text-lg font-medium py-2 border-b mobile-nav-link">Location</a>
         <a href="https://www.finalwhistle.ie/soccer/team/ballygawley-celtic/" target="_blank" rel="noopener noreferrer" class="text-lg font-medium py-2 border-b mobile-nav-link">Results</a>
         <a href="#sponsors" class="text-lg font-medium py-2 border-b mobile-nav-link">Sponsors</a>
-        <a href="#join" class="cta-btn cta-btn-primary text-center mt-4">Join Us</a>
+        <a href="#join" class="cta-btn cta-btn-primary text-center mt-4">
+          <span class="mr-1">🇮🇪</span> Join Us
+        </a>
       </div>
     </div>
   </header>
@@ -155,37 +162,34 @@
     <section class="relative overflow-hidden">
       <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/hero-team.webp'); filter: blur(8px) brightness(0.4);"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-club-green/80 via-club-green-dark/70 to-black/60"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-18">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
           <div class="text-center md:text-left">
-            <div class="hero-crest mx-auto md:mx-0 mb-4">
-              <img src="assets/images/logos/bcfc-logo-1.png" alt="Ballygawley Celtic FC Logo" class="w-full h-full object-contain">
-            </div>
-            <h1 class="font-heading font-black text-2xl md:text-4xl lg:text-5xl text-white mb-3">
+            <h1 class="font-heading font-black text-3xl md:text-5xl lg:text-6xl text-white mb-4">
               Ballygawley Celtic FC
             </h1>
-            <p class="text-club-gold font-heading font-bold text-sm md:text-lg mb-2">
+            <p class="text-club-gold font-heading font-bold text-base md:text-xl mb-3">
               Founded 1980
             </p>
-            <p class="text-white/90 text-sm md:text-lg max-w-2xl mx-auto md:mx-0 mb-6">
+            <p class="text-white/90 text-base md:text-xl max-w-2xl mx-auto md:mx-0">
               Community-run soccer club based in Ballygawley, Co. Sligo.<br class="hidden sm:block">
               Proudly serving our community for over 45 years.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-gold w-full sm:w-auto">
-                <i class="fas fa-user-plus"></i> Become a Member
-              </a>
-              <a href="#about" class="cta-btn hero-btn-secondary w-full sm:w-auto">
-                <i class="fas fa-info-circle"></i> Learn More
-              </a>
-              <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn hero-btn-secondary w-full sm:w-auto">
-                <i class="fas fa-hand-holding-heart"></i> Volunteer
-              </a>
-            </div>
           </div>
-          <div class="hidden md:block">
+          <div class="order-first md:order-last">
             <img src="assets/images/hero-team.webp" alt="Ballygawley Celtic FC Team" class="w-full h-auto rounded-xl shadow-2xl object-cover" loading="lazy">
           </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-gold w-full sm:w-auto sm:min-w-[200px] justify-center">
+            <i class="fas fa-user-plus"></i> Become a Member
+          </a>
+          <a href="#about" class="cta-btn hero-btn-secondary w-full sm:w-auto sm:min-w-[200px] justify-center">
+            <i class="fas fa-info-circle"></i> Learn More
+          </a>
+          <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn hero-btn-secondary w-full sm:w-auto sm:min-w-[200px] justify-center">
+            <i class="fas fa-hand-holding-heart"></i> Volunteer
+          </a>
         </div>
       </div>
     </section>

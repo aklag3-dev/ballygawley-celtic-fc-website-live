@@ -164,6 +164,7 @@ function initMobileNav() {
   try {
     const toggle = document.getElementById('mobileNavToggle');
     const nav = document.getElementById('mobileNav');
+    const closeBtn = document.getElementById('mobileNavClose');
     
     if (!toggle || !nav) {
       console.warn('Mobile nav elements not found');
@@ -173,30 +174,47 @@ function initMobileNav() {
     const icon = toggle.querySelector('i');
     const links = nav.querySelectorAll('a');
 
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
+    function openNav() {
+      nav.classList.add('open');
       if (icon) {
-        icon.classList.toggle('fa-bars', !isOpen);
-        icon.classList.toggle('fa-times', isOpen);
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
       }
-      toggle.setAttribute('aria-expanded', isOpen);
-      if (isOpen) {
-        document.body.style.overflow = 'hidden';
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+      nav.classList.remove('open');
+      if (icon) {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', () => {
+      if (nav.classList.contains('open')) {
+        closeNav();
       } else {
-        document.body.style.overflow = '';
+        openNav();
       }
     });
 
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeNav);
+    }
+
     links.forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        if (icon) {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeNav);
+    });
+
+    // Close nav when clicking outside
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+        closeNav();
+      }
     });
   } catch (error) {
     console.error('Mobile nav initialization failed:', error);

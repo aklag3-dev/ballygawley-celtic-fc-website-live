@@ -458,37 +458,37 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .carousel-container {
-    padding: 0 32px;
+    padding: 0 40px;
   }
 
   .carousel-track {
-    padding: 0 calc((100% - 90%) / 2);
+    padding: 0 calc((100% - 85%) / 2);
     gap: 16px;
   }
 
   .carousel-slide {
-    min-width: 90%;
+    min-width: 85%;
   }
 
   .carousel-card {
-    padding: clamp(0.75rem, 4vw, 1.5rem) !important;
+    padding: clamp(1rem, 5vw, 2rem) !important;
     min-height: auto !important;
   }
 
   .carousel-card h3 {
-    font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  .carousel-card p {
-    font-size: clamp(0.8rem, 2.5vw, 0.95rem) !important;
+    font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
     margin-bottom: 0.75rem !important;
   }
 
+  .carousel-card p {
+    font-size: clamp(0.875rem, 3vw, 1rem) !important;
+    margin-bottom: 1rem !important;
+  }
+
   .carousel-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 0.8rem;
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
     left: 8px !important;
     right: 8px !important;
   }
