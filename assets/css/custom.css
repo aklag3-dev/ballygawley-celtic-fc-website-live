@@ -60,6 +60,94 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
 }
 
+/* Hero button styles */
+.hero-btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Header styles */
+.header-main {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+.nav-link {
+  color: var(--text-secondary);
+}
+
+.nav-link:hover {
+  color: var(--club-green);
+}
+
+/* Mobile nav styles */
+.mobile-nav-panel {
+  background-color: var(--bg-primary);
+}
+
+.mobile-nav-link {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Section backgrounds */
+.section-bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.section-bg-primary {
+  background-color: var(--bg-primary);
+}
+
+/* Card styles */
+.card-text-secondary {
+  color: var(--text-secondary);
+}
+
+.card-text-primary {
+  color: var(--text-primary);
+}
+
+.card-text-muted {
+  color: var(--text-muted);
+}
+
+/* Club color utilities */
+.text-club-green {
+  color: var(--club-green);
+}
+
+.text-club-gold {
+  color: var(--club-gold);
+}
+
+.bg-club-green-10 {
+  background-color: rgba(71, 160, 88, 0.1);
+}
+
+.bg-club-gold-20 {
+  background-color: rgba(255, 215, 0, 0.2);
+}
+
+/* Border utilities */
+.border-club-green {
+  border-color: var(--club-green);
+}
+
+/* Focus styles for accessibility */
+.carousel-btn:focus-visible,
+.cta-btn:focus-visible,
+.dark-mode-toggle:focus-visible {
+  outline: 3px solid var(--club-gold);
+  outline-offset: 2px;
+}
+
 .carousel-container {
   width: 100%;
   max-width: 100%;
@@ -97,6 +185,15 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-card {
   box-shadow: 0 4px 16px var(--shadow-color);
   overflow: hidden;
+  padding: clamp(1rem, 3vw, 3rem);
+}
+
+.carousel-card h3 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.carousel-card p {
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
 }
 
 .carousel-dot {
@@ -374,18 +471,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .carousel-card {
-    padding: 20px 16px !important;
+    padding: clamp(0.75rem, 4vw, 1.5rem) !important;
     min-height: auto !important;
   }
 
   .carousel-card h3 {
-    font-size: 1rem !important;
+    font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
     margin-bottom: 0.5rem !important;
   }
 
   .carousel-card p {
-    font-size: 0.85rem !important;
-    margin-bottom: 1rem !important;
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem) !important;
+    margin-bottom: 0.75rem !important;
   }
 
   .carousel-btn {

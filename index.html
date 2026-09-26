@@ -6,15 +6,70 @@
   <title>Ballygawley Celtic FC: Community Soccer Club | Ballygawley, Co. Sligo</title>
   <meta name="description" content="Ballygawley Celtic FC: a community-run soccer club based in Ballygawley, Co. Sligo since 1980. Underage teams, senior football, and more. Join us today.">
   <meta name="keywords" content="Ballygawley Celtic, soccer, football, Sligo, community club, underage football, FAI Club Mark">
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Ballygawley Celtic FC">
   <meta property="og:description" content="Community-run soccer club based in Ballygawley, Co. Sligo since 1980.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/logos/bcfc-logo.png">
+  <meta property="og:url" content="https://ballygawleyceltic.ie/">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ballygawley Celtic FC">
+  <meta name="twitter:description" content="Community-run soccer club based in Ballygawley, Co. Sligo since 1980.">
+  <meta name="twitter:image" content="assets/images/logos/bcfc-logo.png">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://ballygawleyceltic.ie/">
+  
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src https://maps.google.com; connect-src 'self';">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" as="style">
+  <link rel="preload" href="assets/images/hero-team.webp" as="image">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://maps.google.com">
+  
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
   <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Ballygawley Celtic FC",
+    "url": "https://ballygawleyceltic.ie",
+    "logo": "https://ballygawleyceltic.ie/assets/images/logos/bcfc-logo.png",
+    "foundingDate": "1980",
+    "description": "Community-run soccer club based in Ballygawley, Co. Sligo since 1980",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ballygawley Community Park",
+      "addressLocality": "Ballygawley",
+      "addressRegion": "Co. Sligo",
+      "postalCode": "F91 X92F",
+      "addressCountry": "IE"
+    },
+    "sameAs": [
+      "https://www.facebook.com/BallygawleyCeltic/",
+      "https://www.instagram.com/ballygawleycelticfc/",
+      "https://x.com/BallygawleyC"
+    ]
+  }
+  </script>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -51,7 +106,7 @@
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- HEADER -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <header class="sticky top-0 z-50 backdrop-blur-md border-b" style="background-color: var(--bg-primary); border-color: var(--border-color);">
+  <header class="sticky top-0 z-50 backdrop-blur-md border-b header-main">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
 
@@ -61,11 +116,11 @@
         </a>
 
         <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
-          <a href="#about" class="font-medium hover:text-club-green transition-colors" style="color: var(--text-secondary);">About</a>
-          <a href="#registration" class="font-medium hover:text-club-green transition-colors" style="color: var(--text-secondary);">Registration</a>
-          <a href="#location" class="font-medium hover:text-club-green transition-colors" style="color: var(--text-secondary);">Location</a>
-          <a href="https://www.finalwhistle.ie/soccer/team/ballygawley-celtic/" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-club-green transition-colors" style="color: var(--text-secondary);">Results</a>
-          <a href="#sponsors" class="font-medium hover:text-club-green transition-colors" style="color: var(--text-secondary);">Sponsors</a>
+          <a href="#about" class="font-medium hover:text-club-green transition-colors nav-link">About</a>
+          <a href="#registration" class="font-medium hover:text-club-green transition-colors nav-link">Registration</a>
+          <a href="#location" class="font-medium hover:text-club-green transition-colors nav-link">Location</a>
+          <a href="https://www.finalwhistle.ie/soccer/team/ballygawley-celtic/" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-club-green transition-colors nav-link">Results</a>
+          <a href="#sponsors" class="font-medium hover:text-club-green transition-colors nav-link">Sponsors</a>
         </nav>
 
         <div class="flex items-center gap-3">
@@ -80,13 +135,13 @@
       </div>
     </div>
 
-    <div id="mobileNav" class="mobile-nav fixed top-0 right-0 h-full w-72 z-50 shadow-2xl md:hidden" style="background-color: var(--bg-primary);">
+    <div id="mobileNav" class="mobile-nav fixed top-0 right-0 h-full w-72 z-50 shadow-2xl md:hidden mobile-nav-panel">
       <div class="p-6 pt-20 flex flex-col gap-4">
-        <a href="#about" class="text-lg font-medium py-2 border-b" style="color: var(--text-primary); border-color: var(--border-color);">About</a>
-        <a href="#registration" class="text-lg font-medium py-2 border-b" style="color: var(--text-primary); border-color: var(--border-color);">Registration</a>
-        <a href="#location" class="text-lg font-medium py-2 border-b" style="color: var(--text-primary); border-color: var(--border-color);">Location</a>
-        <a href="https://www.finalwhistle.ie/soccer/team/ballygawley-celtic/" target="_blank" rel="noopener noreferrer" class="text-lg font-medium py-2 border-b" style="color: var(--text-primary); border-color: var(--border-color);">Results</a>
-        <a href="#sponsors" class="text-lg font-medium py-2 border-b" style="color: var(--text-primary); border-color: var(--border-color);">Sponsors</a>
+        <a href="#about" class="text-lg font-medium py-2 border-b mobile-nav-link">About</a>
+        <a href="#registration" class="text-lg font-medium py-2 border-b mobile-nav-link">Registration</a>
+        <a href="#location" class="text-lg font-medium py-2 border-b mobile-nav-link">Location</a>
+        <a href="https://www.finalwhistle.ie/soccer/team/ballygawley-celtic/" target="_blank" rel="noopener noreferrer" class="text-lg font-medium py-2 border-b mobile-nav-link">Results</a>
+        <a href="#sponsors" class="text-lg font-medium py-2 border-b mobile-nav-link">Sponsors</a>
         <a href="#join" class="cta-btn cta-btn-primary text-center mt-4">Join Us</a>
       </div>
     </div>
@@ -98,7 +153,7 @@
     <!-- HERO -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <section class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/hero-team.jpg'); filter: blur(8px) brightness(0.4);"></div>
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/hero-team.webp'); filter: blur(8px) brightness(0.4);"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-club-green/80 via-club-green-dark/70 to-black/60"></div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-18">
         <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -120,16 +175,16 @@
               <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-gold w-full sm:w-auto">
                 <i class="fas fa-user-plus"></i> Become a Member
               </a>
-              <a href="#about" class="cta-btn w-full sm:w-auto" style="background: rgba(255,255,255,0.15); color: #fff; border: 2px solid rgba(255,255,255,0.3);">
+              <a href="#about" class="cta-btn hero-btn-secondary w-full sm:w-auto">
                 <i class="fas fa-info-circle"></i> Learn More
               </a>
-              <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn w-full sm:w-auto" style="background: rgba(255,255,255,0.15); color: #fff; border: 2px solid rgba(255,255,255,0.3);">
+              <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn hero-btn-secondary w-full sm:w-auto">
                 <i class="fas fa-hand-holding-heart"></i> Volunteer
               </a>
             </div>
           </div>
           <div class="hidden md:block">
-            <img src="assets/images/hero-team.jpg" alt="Ballygawley Celtic FC Team" class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            <img src="assets/images/hero-team.webp" alt="Ballygawley Celtic FC Team" class="w-full h-auto rounded-xl shadow-2xl object-cover" loading="lazy">
           </div>
         </div>
       </div>
@@ -138,7 +193,7 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- ANNOUNCEMENT CAROUSEL -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <section class="py-8 md:py-12 relative" style="background-color: var(--bg-secondary);" aria-label="Club announcements">
+    <section class="py-8 md:py-12 relative section-bg-secondary" aria-label="Club announcements">
       <div class="carousel-container relative" role="region" aria-roledescription="carousel" aria-label="Club announcements" tabindex="0">
         <div class="carousel-viewport overflow-hidden">
           <div id="carouselTrack" class="carousel-track">
@@ -147,7 +202,7 @@
               <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
                 <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Women's Team: We Need You!</h3>
                 <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">We're launching a women's team and looking for players and a coach. If you're interested in playing or coaching, get in touch today!</p>
-                <a href="mailto:ballygawleyceltic@gmail.com?subject=Women's%20Team%20Interest" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
+                <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Women's Team Interest" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
                   <i class="fas fa-envelope"></i> Get in Touch
                 </a>
               </div>
@@ -187,7 +242,7 @@
               <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
                 <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Committee Volunteers Needed</h3>
                 <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">The Club is looking for volunteers to join the Committee in two roles: Development Officer and Community Officer. Help shape the future of our club!</p>
-                <a href="mailto:ballygawleyceltic@gmail.com?subject=Committee%20Volunteer%20Enquiry" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
+                <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Committee Volunteer Enquiry" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
                   <i class="fas fa-envelope"></i> Contact Secretary
                 </a>
               </div>
@@ -197,7 +252,7 @@
               <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
                 <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Safeguarding</h3>
                 <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">Reach out to your team coach for daily issues, and contact our Child Welfare team (Carol Cranley & Cian McGowan) for safeguarding or unresolved concerns.</p>
-                <a href="mailto:childwelfareballygawleyceltic@gmail.com" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
+                <a href="#" data-email="childwelfareballygawleyceltic@gmail.com" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
                   <i class="fas fa-envelope"></i> Contact Child Welfare
                 </a>
               </div>
@@ -229,7 +284,7 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- ABOUT THE CLUB -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <section id="about" class="py-16 md:py-20" style="background-color: var(--bg-primary);">
+    <section id="about" class="py-16 md:py-20 section-bg-primary">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="section-heading">About Our Club</h2>
@@ -297,7 +352,7 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- REGISTRATION -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <section id="registration" class="py-16 md:py-20" style="background-color: var(--bg-secondary);">
+    <section id="registration" class="py-16 md:py-20 section-bg-secondary">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="section-heading">Registration</h2>
@@ -322,7 +377,7 @@
             </div>
             <h3 class="font-heading font-bold text-lg mb-2" style="color: var(--text-primary);">Senior Team</h3>
             <p class="mb-4" style="color: var(--text-secondary);">Interested in playing for our Men's Senior team? Get in touch with the secretary to arrange a trial.</p>
-            <a href="mailto:ballygawleyceltic@gmail.com?subject=Senior%20Team%20Enquiry" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-secondary text-sm py-2 px-4">
+            <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Senior Team Enquiry" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-secondary text-sm py-2 px-4">
               <i class="fas fa-envelope"></i> Get in Touch
             </a>
           </div>
@@ -342,7 +397,7 @@
         <div class="rounded-xl p-6 md:p-8 border-2" style="background: linear-gradient(135deg, rgba(71,160,88,0.08), rgba(255,215,0,0.08)); border-color: var(--club-green);">
           <div class="flex flex-col md:flex-row items-center gap-6">
             <div class="w-16 h-16 rounded-full bg-club-green flex items-center justify-center flex-shrink-0">
-              <img src="assets/images/womens-team-icon.png" alt="Women's Team" class="w-10 h-10 object-contain">
+              <img src="assets/images/womens-team-icon.png" alt="Women's Team" class="w-10 h-10 object-contain" loading="lazy">
             </div>
             <div class="flex-1 text-center md:text-left">
               <h3 class="font-heading font-bold text-xl mb-2" style="color: var(--text-primary);">
@@ -352,7 +407,7 @@
                 We're looking for <strong style="color: var(--text-primary);">players</strong> and a <strong style="color: var(--text-primary);">coach</strong> to launch our women's team. If you're interested in playing or coaching, we'd love to hear from you!
               </p>
             </div>
-            <a href="mailto:ballygawleyceltic@gmail.com?subject=Women's%20Team%20Interest" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary flex-shrink-0">
+            <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Women's Team Interest" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary flex-shrink-0">
               <i class="fas fa-envelope"></i> Contact Us
             </a>
           </div>
@@ -363,7 +418,7 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- SPONSORS -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <section id="sponsors" class="py-16 md:py-20" style="background-color: var(--bg-primary);">
+    <section id="sponsors" class="py-16 md:py-20 section-bg-primary">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="section-heading">Our Sponsors</h2>
@@ -373,29 +428,29 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
           <div class="sponsor-logo">
             <a href="https://castledargan.com/" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/sponsors/castle-dargan.png" alt="Castle Dargan Hotel">
+              <img src="assets/images/sponsors/castle-dargan.png" alt="Castle Dargan Hotel" loading="lazy">
             </a>
           </div>
           <div class="sponsor-logo">
             <a href="https://www.mphire.ie/" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/sponsors/mp-hire.png" alt="MP Hire">
+              <img src="assets/images/sponsors/mp-hire.png" alt="MP Hire" loading="lazy">
             </a>
           </div>
           <div class="sponsor-logo">
             <a href="https://www.porterford.ie/" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/sponsors/porter-ford.png" alt="Porter Ford">
+              <img src="assets/images/sponsors/porter-ford.png" alt="Porter Ford" loading="lazy">
             </a>
           </div>
           <div class="sponsor-logo">
             <a href="https://www.facebook.com/kellysbarsligo/" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/sponsors/kellys-bar.png" alt="Kelly's Bar">
+              <img src="assets/images/sponsors/kellys-bar.png" alt="Kelly's Bar" loading="lazy">
             </a>
           </div>
         </div>
 
         <div class="text-center">
           <p class="mb-4" style="color: var(--text-secondary);">Interested in sponsoring Ballygawley Celtic FC?</p>
-          <a href="mailto:ballygawleyceltic@gmail.com?subject=Sponsorship%20Enquiry" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-secondary">
+          <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Sponsorship Enquiry" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-secondary">
             <i class="fas fa-handshake"></i> Sponsorship Enquiries
           </a>
         </div>
@@ -405,7 +460,7 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- HOME GROUND & LOCATION -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <section id="location" class="py-16 md:py-20" style="background-color: var(--bg-primary);">
+    <section id="location" class="py-16 md:py-20 section-bg-primary">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="section-heading">Our Home Ground</h2>
@@ -504,7 +559,7 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- SOCIAL MEDIA -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <section class="py-12 md:py-16" style="background-color: var(--bg-secondary);">
+    <section class="py-12 md:py-16 section-bg-secondary">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="section-heading text-2xl mb-2">Follow Us</h2>
         <p class="section-subheading">Stay up to date with club news, fixtures, and results</p>
@@ -560,17 +615,17 @@
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- FOOTER -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <footer class="py-10 border-t" style="background-color: var(--bg-secondary); border-color: var(--border-color);">
+  <footer class="py-10 border-t section-bg-secondary" style="border-color: var(--border-color);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
         <div>
           <div class="flex items-center gap-3 mb-4">
-            <img src="assets/images/logos/bcfc-logo.png" alt="Ballygawley Celtic FC" class="w-[60px] h-[60px] rounded-full object-cover">
+            <img src="assets/images/logos/bcfc-logo.png" alt="Ballygawley Celtic FC" class="w-[60px] h-[60px] rounded-full object-cover" loading="lazy">
             <span class="font-heading font-bold text-lg" style="color: var(--text-primary);">Ballygawley Celtic FC</span>
           </div>
           <p class="text-sm mb-4" style="color: var(--text-muted);">Community-run soccer club based in Ballygawley, Co. Sligo. Proudly serving our community since 1980.</p>
           <div class="flex flex-col items-start gap-2">
-            <img src="assets/images/league/club-mark.png" alt="FAI Club Mark" class="w-64 h-64 object-contain">
+            <img src="assets/images/league/club-mark.webp" alt="FAI Club Mark" class="w-64 h-64 object-contain" loading="lazy">
             <span class="text-xs text-left" style="color: var(--text-muted);">FAI Club Mark Accredited</span>
           </div>
         </div>
@@ -589,19 +644,19 @@
           <h4 class="font-heading font-bold mb-3" style="color: var(--text-primary);">Affiliated With</h4>
           <div class="space-y-3">
             <div class="flex items-center gap-3">
-              <img src="assets/images/league/fai.webp" alt="Football Association of Ireland" class="w-10 h-10 object-contain">
+              <img src="assets/images/league/fai.webp" alt="Football Association of Ireland" class="w-10 h-10 object-contain" loading="lazy">
               <span class="text-sm" style="color: var(--text-secondary);">Football Association of Ireland</span>
             </div>
             <div class="flex items-center gap-3">
-              <img src="assets/images/league/connacht-fa.webp" alt="Connacht Football Association" class="w-10 h-10 object-contain">
+              <img src="assets/images/league/connacht-fa.webp" alt="Connacht Football Association" class="w-10 h-10 object-contain" loading="lazy">
               <span class="text-sm" style="color: var(--text-secondary);">Connacht Football Association</span>
             </div>
             <div class="flex items-center gap-3">
-              <img src="assets/images/league/sldsl.jpg" alt="Sligo Leitrim District Soccer League" class="w-10 h-10 object-contain">
+              <img src="assets/images/league/sldsl.webp" alt="Sligo Leitrim District Soccer League" class="w-10 h-10 object-contain" loading="lazy">
               <span class="text-sm" style="color: var(--text-secondary);">Sligo Leitrim District Soccer League</span>
             </div>
             <div class="flex items-center gap-3">
-              <img src="assets/images/league/slsfgl.png" alt="Sligo Leitrim Schoolboys & Schoolgirls League" class="w-10 h-10 object-contain">
+              <img src="assets/images/league/slsfgl.webp" alt="Sligo Leitrim Schoolboys & Schoolgirls League" class="w-10 h-10 object-contain" loading="lazy">
               <span class="text-sm" style="color: var(--text-secondary);">Sligo Leitrim Schoolboys & Schoolgirls League</span>
             </div>
           </div>
