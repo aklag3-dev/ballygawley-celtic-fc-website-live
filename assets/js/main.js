@@ -52,119 +52,48 @@ function initDarkMode() {
 
 function initCarousel() {
   try {
-    const track = document.getElementById('carouselTrack');
-    if (!track) {
-      console.warn('Carousel track not found');
+    const swiperContainer = document.querySelector('.announcement-swiper');
+    if (!swiperContainer) {
+      console.warn('Swiper container not found');
       return;
     }
     
-    const slides = track.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const prevBtn = document.getElementById('carouselPrev');
-    const nextBtn = document.getElementById('carouselNext');
-    const container = document.querySelector('.carousel-container');
-    const liveRegion = document.getElementById('carouselLive');
-
-    if (!slides.length || !container) {
-      console.warn('Carousel elements not found');
-      return;
-    }
-
-    let current = 0;
-    let autoPlayTimer;
-    const total = slides.length;
-    const autoPlayDelay = 5000;
-
-  function getSlideOffset(index) {
-    const slide = slides[index];
-    const slideWidth = slide.offsetWidth;
-    const containerWidth = container.offsetWidth;
-    const slideLeft = slide.offsetLeft;
-    const gap = parseInt(getComputedStyle(track).gap) || 0;
-    
-    // On mobile (small screens), show full width cards
-    // On desktop, show centered cards with peek
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isMobile) {
-      // For mobile: align slide to the left of container
-      return slideLeft;
-    } else {
-      // For desktop: center the slide
-      const containerCenter = containerWidth / 2;
-      const slideCenter = slideLeft + slideWidth / 2;
-      return slideCenter - containerCenter;
-    }
-  }
-
-    function goTo(index) {
-      if (index < 0) index = total - 1;
-      if (index >= total) index = 0;
-      current = index;
-      const offset = getSlideOffset(current);
-      track.style.transform = `translateX(-${offset}px)`;
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === current);
-        dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
-      });
-      slides.forEach((slide, i) => {
-        slide.setAttribute('aria-hidden', i !== current ? 'true' : 'false');
-      });
-      if (liveRegion) {
-        liveRegion.textContent = `Slide ${current + 1} of ${total}: ${slides[current].dataset.title}`;
-      }
-    }
-
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
-
-    function startAutoPlay() {
-      stopAutoPlay();
-      autoPlayTimer = setInterval(next, autoPlayDelay);
-    }
-
-    function stopAutoPlay() {
-      clearInterval(autoPlayTimer);
-    }
-
-    if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoPlay(); });
-    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoPlay(); });
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => { goTo(i); startAutoPlay(); });
+    const swiper = new Swiper('.announcement-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 1.2,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 1.5,
+          spaceBetween: 30,
+        },
+      },
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+      },
     });
-
-    container.addEventListener('mouseenter', stopAutoPlay);
-    container.addEventListener('mouseleave', startAutoPlay);
-    container.addEventListener('focusin', stopAutoPlay);
-    container.addEventListener('focusout', startAutoPlay);
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    container.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      stopAutoPlay();
-    }, { passive: true });
-
-    container.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 50) {
-        diff > 0 ? next() : prev();
-      }
-      startAutoPlay();
-    }, { passive: true });
-
-    container.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') { prev(); startAutoPlay(); e.preventDefault(); }
-      if (e.key === 'ArrowRight') { next(); startAutoPlay(); e.preventDefault(); }
-    });
-
-    window.addEventListener('resize', debounce(() => { goTo(current); }, 250));
-
-    goTo(0);
-    startAutoPlay();
   } catch (error) {
     console.error('Carousel initialization failed:', error);
   }

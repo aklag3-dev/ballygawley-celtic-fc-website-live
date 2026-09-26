@@ -24,7 +24,7 @@
   <link rel="canonical" href="https://ballygawleyceltic.ie/">
   
   <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src 'self' https://maps.google.com https://www.google.com https://*.google.com; connect-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src 'self' https://maps.google.com https://www.google.com https://*.google.com; connect-src 'self';">
   
   <!-- Preload critical resources -->
   <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
@@ -97,7 +97,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 </head>
 <body class="font-body" style="background-color: var(--bg-primary); color: var(--text-primary);">
 
@@ -195,93 +197,76 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <!-- ANNOUNCEMENT CAROUSEL -->
+    <!-- ANNOUNCEMENT CAROUSEL (Swiper.js) -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <section class="py-4 md:py-6 relative section-bg-secondary" aria-label="Club announcements">
-      <div class="carousel-container relative" role="region" aria-roledescription="carousel" aria-label="Club announcements" tabindex="0">
-        <div class="carousel-viewport overflow-hidden">
-          <div id="carouselTrack" class="carousel-track">
+      <div class="swiper announcement-swiper max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="swiper-wrapper">
 
-            <div class="carousel-slide" data-title="Women's Team Recruitment" aria-roledescription="slide" aria-label="Slide 1 of 6" aria-hidden="false">
-              <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
-                <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Women's Team: We Need You!</h3>
-                <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">We're launching a women's team and looking for players and a coach. If you're interested in playing or coaching, get in touch today!</p>
-                <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Women's Team Interest" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
-                  <i class="fas fa-envelope"></i> Get in Touch
-                </a>
-              </div>
+          <div class="swiper-slide">
+            <div class="carousel-card p-5 md:p-10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
+              <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Women's Team: We Need You!</h3>
+              <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg" style="color: var(--text-secondary);">We're launching a women's team and looking for players and a coach. If you're interested in playing or coaching, get in touch today!</p>
+              <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Women's Team Interest" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
+                <i class="fas fa-envelope"></i> Get in Touch
+              </a>
             </div>
-
-            <div class="carousel-slide" data-title="Underage Registration Open" aria-roledescription="slide" aria-label="Slide 2 of 6" aria-hidden="true">
-              <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
-                <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Underage Registration Now Open</h3>
-                <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">Registration is now open for all underage teams (U6 to U18). Sign up today and join the Ballygawley Celtic family!</p>
-                <a href="#registration" class="cta-btn cta-btn-primary">
-                  <i class="fas fa-clipboard-list"></i> Register Now
-                </a>
-              </div>
-            </div>
-
-            <div class="carousel-slide" data-title="Serving Ballygawley Since 1980" aria-roledescription="slide" aria-label="Slide 3 of 6" aria-hidden="true">
-              <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
-                <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Proudly Serving Ballygawley Since 1980</h3>
-                <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">Over 45 years of community football. We develop young players and bring this community together through the game we love.</p>
-                <a href="#about" class="cta-btn cta-btn-secondary">
-                  <i class="fas fa-info-circle"></i> Our Story
-                </a>
-              </div>
-            </div>
-
-            <div class="carousel-slide" data-title="Volunteer With Us" aria-roledescription="slide" aria-label="Slide 4 of 6" aria-hidden="true">
-              <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
-                <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Volunteer With Us</h3>
-                <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">Help us grow the game. We need coaches, referees, and volunteers. Every bit counts. Get involved today!</p>
-                <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-gold">
-                  <i class="fas fa-hand-holding-heart"></i> Volunteer Now
-                </a>
-              </div>
-            </div>
-
-            <div class="carousel-slide" data-title="Committee Volunteers Needed" aria-roledescription="slide" aria-label="Slide 5 of 6" aria-hidden="true">
-              <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
-                <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Committee Volunteers Needed</h3>
-                <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">The Club is looking for volunteers to join the Committee in two roles: Development Officer and Community Officer. Help shape the future of our club!</p>
-                <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Committee Volunteer Enquiry" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
-                  <i class="fas fa-envelope"></i> Contact Secretary
-                </a>
-              </div>
-            </div>
-
-            <div class="carousel-slide" data-title="Safeguarding" aria-roledescription="slide" aria-label="Slide 6 of 6" aria-hidden="true">
-              <div class="carousel-card p-6 md:p-12 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
-                <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Safeguarding</h3>
-                <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg px-2" style="color: var(--text-secondary);">Reach out to your team coach for daily issues, and contact our Child Welfare team (Carol Cranley & Cian McGowan) for safeguarding or unresolved concerns.</p>
-                <a href="#" data-email="childwelfareballygawleyceltic@gmail.com" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
-                  <i class="fas fa-envelope"></i> Contact Child Welfare
-                </a>
-              </div>
-            </div>
-
           </div>
+
+          <div class="swiper-slide">
+            <div class="carousel-card p-5 md:p-10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
+              <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Underage Registration Now Open</h3>
+              <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg" style="color: var(--text-secondary);">Registration is now open for all underage teams (U6 to U18). Sign up today and join the Ballygawley Celtic family!</p>
+              <a href="#registration" class="cta-btn cta-btn-primary">
+                <i class="fas fa-clipboard-list"></i> Register Now
+              </a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="carousel-card p-5 md:p-10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
+              <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Proudly Serving Ballygawley Since 1980</h3>
+              <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg" style="color: var(--text-secondary);">Over 45 years of community football. We develop young players and bring this community together through the game we love.</p>
+              <a href="#about" class="cta-btn cta-btn-secondary">
+                <i class="fas fa-info-circle"></i> Our Story
+              </a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="carousel-card p-5 md:p-10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
+              <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Volunteer With Us</h3>
+              <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg" style="color: var(--text-secondary);">Help us grow the game. We need coaches, referees, and volunteers. Every bit counts. Get involved today!</p>
+              <a href="https://forms.gle/DssUUeUChZsBf15a6" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-gold">
+                <i class="fas fa-hand-holding-heart"></i> Volunteer Now
+              </a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="carousel-card p-5 md:p-10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
+              <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Committee Volunteers Needed</h3>
+              <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg" style="color: var(--text-secondary);">The Club is looking for volunteers to join the Committee in two roles: Development Officer and Community Officer. Help shape the future of our club!</p>
+              <a href="#" data-email="ballygawleyceltic@gmail.com" data-subject="Committee Volunteer Enquiry" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
+                <i class="fas fa-envelope"></i> Contact Secretary
+              </a>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="carousel-card p-5 md:p-10 flex flex-col items-center justify-center min-h-[200px] md:min-h-[264px] rounded-xl text-center" style="background-color: var(--bg-card);">
+              <h3 class="font-heading font-bold text-base md:text-2xl mb-2 md:mb-3" style="color: var(--text-primary);">Safeguarding</h3>
+              <p class="text-sm md:text-lg mb-3 md:mb-5 leading-relaxed max-w-lg" style="color: var(--text-secondary);">Reach out to your team coach for daily issues, and contact our Child Welfare team (Carol Cranley & Cian McGowan) for safeguarding or unresolved concerns.</p>
+              <a href="#" data-email="childwelfareballygawleyceltic@gmail.com" target="_blank" rel="noopener noreferrer" class="cta-btn cta-btn-primary">
+                <i class="fas fa-envelope"></i> Contact Child Welfare
+              </a>
+            </div>
+          </div>
+
         </div>
-
-        <div id="carouselLive" class="sr-only" aria-live="polite" aria-atomic="true"></div>
-
-        <button id="carouselPrev" class="carousel-btn absolute left-4 top-1/2 -translate-y-1/2 z-10" aria-label="Previous slide">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button id="carouselNext" class="carousel-btn absolute right-4 top-1/2 -translate-y-1/2 z-10" aria-label="Next slide">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-
-      <div class="flex justify-center gap-3 mt-5" role="tablist" aria-label="Carousel navigation">
-        <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Go to slide 1"></button>
-        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Go to slide 2"></button>
-        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Go to slide 3"></button>
-        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Go to slide 4"></button>
-        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Go to slide 5"></button>
-        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Go to slide 6"></button>
+        <div class="swiper-pagination !mt-4 !mb-2"></div>
+        <div class="swiper-button-prev !text-club-green"></div>
+        <div class="swiper-button-next !text-club-green"></div>
       </div>
     </section>
 
