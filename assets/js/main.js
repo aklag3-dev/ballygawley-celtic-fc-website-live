@@ -61,6 +61,7 @@ function initCarousel() {
     const swiper = new Swiper('.announcement-swiper', {
       slidesPerView: 1,
       spaceBetween: 20,
+      centeredSlides: true,
       loop: true,
       autoplay: {
         delay: 5000,
@@ -81,11 +82,11 @@ function initCarousel() {
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 1.2,
+          slidesPerView: 1,
           spaceBetween: 24,
         },
         1024: {
-          slidesPerView: 1.5,
+          slidesPerView: 1,
           spaceBetween: 30,
         },
       },

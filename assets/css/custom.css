@@ -151,6 +151,8 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-card {
   box-shadow: 0 4px 16px var(--shadow-color);
   overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .carousel-card h3 {
@@ -164,6 +166,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Swiper overrides */
 .announcement-swiper {
   position: relative;
+  padding-bottom: 50px;
+}
+
+.announcement-swiper .swiper-pagination {
+  bottom: 0 !important;
 }
 
 .announcement-swiper .swiper-button-prev,
