@@ -157,13 +157,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .swiper-slide-active .carousel-card {
-  background-color: var(--club-green) !important;
-  box-shadow: 0 8px 24px rgba(71, 160, 88, 0.3);
-}
-
-.swiper-slide-active .carousel-card h3,
-.swiper-slide-active .carousel-card p {
-  color: #fff !important;
+  background-color: rgba(71, 160, 88, 0.12) !important;
+  border: 2px solid var(--club-green);
+  box-shadow: 0 8px 24px rgba(71, 160, 88, 0.2);
 }
 
 .carousel-card h3 {
