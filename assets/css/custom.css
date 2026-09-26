@@ -153,6 +153,17 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   max-width: 600px;
   margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.swiper-slide-active .carousel-card {
+  background-color: var(--club-green) !important;
+  box-shadow: 0 8px 24px rgba(71, 160, 88, 0.3);
+}
+
+.swiper-slide-active .carousel-card h3,
+.swiper-slide-active .carousel-card p {
+  color: #fff !important;
 }
 
 .carousel-card h3 {
@@ -167,6 +178,11 @@ h1, h2, h3, h4, h5, h6 {
 .announcement-swiper {
   position: relative;
   padding-bottom: 50px;
+}
+
+.announcement-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
 }
 
 .announcement-swiper .swiper-pagination {
@@ -192,8 +208,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .announcement-swiper .swiper-button-prev::after,
 .announcement-swiper .swiper-button-next::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   font-size: 1rem;
-  font-weight: bold;
+}
+
+.announcement-swiper .swiper-button-prev::after {
+  content: "\f053";
+}
+
+.announcement-swiper .swiper-button-next::after {
+  content: "\f054";
 }
 
 .announcement-swiper .swiper-pagination-bullet {
@@ -208,6 +233,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  .announcement-swiper {
+    padding-bottom: 100px;
+  }
+
   .announcement-swiper .swiper-button-prev,
   .announcement-swiper .swiper-button-next {
     display: none;
@@ -407,6 +436,10 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav {
   transform: translateX(100%);
   transition: transform 0.3s ease;
+  background-color: var(--bg-primary);
+  opacity: 1;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .mobile-nav.open {
