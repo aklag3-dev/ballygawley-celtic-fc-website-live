@@ -458,39 +458,41 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .carousel-container {
-    padding: 0 40px;
+    padding: 0 20px;
   }
 
   .carousel-track {
-    padding: 0 calc((100% - 85%) / 2);
-    gap: 16px;
+    padding: 0;
+    gap: 12px;
   }
 
   .carousel-slide {
-    min-width: 85%;
+    min-width: 100%;
   }
 
   .carousel-card {
-    padding: clamp(1rem, 5vw, 2rem) !important;
+    padding: 1.5rem 1rem !important;
     min-height: auto !important;
   }
 
   .carousel-card h3 {
-    font-size: clamp(1rem, 3.5vw, 1.25rem) !important;
+    font-size: 1.1rem !important;
     margin-bottom: 0.75rem !important;
+    line-height: 1.3 !important;
   }
 
   .carousel-card p {
-    font-size: clamp(0.875rem, 3vw, 1rem) !important;
+    font-size: 0.9rem !important;
     margin-bottom: 1rem !important;
+    line-height: 1.5 !important;
   }
 
   .carousel-btn {
     width: 36px;
     height: 36px;
     font-size: 0.9rem;
-    left: 8px !important;
-    right: 8px !important;
+    left: 4px !important;
+    right: 4px !important;
   }
 
   .sponsor-logo {
@@ -509,6 +511,35 @@ h1, h2, h3, h4, h5, h6 {
   .affiliation-badge img {
     width: 2.5rem !important;
     height: 2.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 0 16px;
+  }
+
+  .carousel-card {
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  .carousel-card h3 {
+    font-size: 1rem !important;
+  }
+
+  .carousel-card p {
+    font-size: 0.85rem !important;
+  }
+
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .cta-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
 }
 

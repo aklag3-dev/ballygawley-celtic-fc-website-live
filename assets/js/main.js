@@ -75,17 +75,27 @@ function initCarousel() {
     const total = slides.length;
     const autoPlayDelay = 5000;
 
-    function getSlideOffset(index) {
-      const slide = slides[index];
-      const slideWidth = slide.offsetWidth;
-      const containerWidth = container.offsetWidth;
-      const slideLeft = slide.offsetLeft;
-      
+  function getSlideOffset(index) {
+    const slide = slides[index];
+    const slideWidth = slide.offsetWidth;
+    const containerWidth = container.offsetWidth;
+    const slideLeft = slide.offsetLeft;
+    const gap = parseInt(getComputedStyle(track).gap) || 0;
+    
+    // On mobile (small screens), show full width cards
+    // On desktop, show centered cards with peek
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+      // For mobile: align slide to the left of container
+      return slideLeft;
+    } else {
+      // For desktop: center the slide
       const containerCenter = containerWidth / 2;
       const slideCenter = slideLeft + slideWidth / 2;
-      
       return slideCenter - containerCenter;
     }
+  }
 
     function goTo(index) {
       if (index < 0) index = total - 1;
